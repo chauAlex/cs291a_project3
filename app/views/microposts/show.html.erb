@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @micropost %>
+
+<div>
+  <%= link_to "Edit this micropost", edit_micropost_path(@micropost) %> |
+  <%= link_to "Back to microposts", microposts_path %> |
+  <%= link_to "Back to User", user_path(@micropost.user_id) %>
+
+
+  <%= button_to "Destroy this micropost", @micropost, method: :delete %>
+</div>
+
+<h2>Comments</h2>
+<%= render @micropost.comments %>
+
+<h2>Add a comment</h2>
+<%= render 'comments/form' %>
